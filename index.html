@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Turn-based board game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="game-body">
+    <div id="main" class="main">
+        <div id="player1" class="team">
+            <img src="images/gauls.png" alt="Gauls Team" class="team-image">     
+            <div id ="gaulsBtns" class="btn-group">
+                <button id="gauls_attackBtn" class="btn"> Attack</button>
+                <h2 class="team-title">Gauls</h2>
+                <button id="gauls_defendBtn" class="btn">Defend</button>
+            </div>      
+            <h2 class="team-title team-name">Gauls Team</h2>
+            <div class="info">
+                <h3 class="info-title">Life: <span id="gauls_life" class="info-detail"></span> </h3>
+                <h3 class="info-title">Weapon: <span id="gauls_weapon" class="info-detail info-weapon"></span> </h3>
+                <h4 class="info-title">Damages: <span id="gauls_weaponDamage" class="info-detail"></span> </h4>
+            </div>            
+        </div>
+        
+        <div id="gameBoard" class="board">                       
+        </div>
+
+        <div id="player2" class="team">
+            <img src="images/romans.png" alt="Romans Team" class="team-image">
+            <div id ="romansBtns" class="btn-group">
+                <button id="romans_attackBtn" class="btn"> Attack</button>
+                <h2 class="team-title">Romans</h2>
+                <button id="romans_defendBtn" class="btn">Defend</button>
+            </div>  
+            <h2 class="team-title team-name">Romans Team</h2>
+            <div class="info">
+                <h3 class="info-title">Life: <span id="romans_life" class="info-detail"></span> </h3>
+                <h3 class="info-title">Weapon: <span id="romans_weapon" class="info-detail info-weapon"></span> </h3>
+                <h4 class="info-title">Damages: <span id="romans_weaponDamage" class="info-detail"></span> </h4>
+            </div>            
+        </div>
+
+        <div class="result" id="result">
+            <div>
+                <h2 class="result-title"> Thank you for playing !</h2>
+            </div>
+            <div>
+                <img src="images/winnergauls.png" alt="Winning player" id="winner_image" class="winner-image">
+                <p class="result-text"> Congratulations to the <span id="winner_name" class="winner-name"></span> !</p>                
+                <button type="button" id="play" class="btn btn-play">Play Again</button>
+            </div>
+        </div>
+        <button id="modalOpenBtn" class="btn-help"><img src="images/help.png" class="btn-helpImg" alt="Instructions button"></button>
+
+        <div class="modal">
+            <div class="modal-content">
+                <span id="modalCloseBtn" class="btn-closeModal">&times;</span>
+                <h2 class="instructions-title"> Instructions </h2>
+                <ul class="instructions-list">
+                    <li class="instructions-item">
+                        When it’s your turn, you can move around the board by clicking on one of the highlighted boxes. 
+                    </li>
+                    <li class="instructions-item">
+                        You can only move from one to three boxes, horizontally or vertically.
+                    </li>
+                    <li class="instructions-item">
+                        If you pass through a box containing a weapon, you can pick it up  and leave your old weapon on site.
+                    </li>
+                    <li class="instructions-item"> 
+                        There are obstacles on the board which you can't pass through directly.
+                    </li>                
+                    <li class="instructions-item">
+                        The <strong>battle</strong> begins when the players get next to each other horizontally or vertically.
+                    </li>
+                    <li class="instructions-item">
+                        During the battle, each player attacks in turn: you can decide to attack the opponent, or defend yourself.
+                    </li>
+                    <li class="instructions-item">
+                        The damages dealt to your opponent depends on your weapon. The weapons are: Sword (10), Shield(15), Catapult(20)
+                        and Magic Potion (30).
+                    </li>
+                    <li class="instructions-item">
+                        If you choose to defend yourself, you sustain 50% less damage than normal during the opponent's next attack.
+                    </li>
+                    <li class="instructions-item">
+                        As soon as the life points of a player (initially 100) falls to 0, they lose. A message appears and the game is over.
+                    </li>
+                </ul>
+                                    
+            </div>
+    
+        </div>
+    </div>    
+    
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/movements.js"></script>
+    <script src="js/fight.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,298 @@
+/* General
+------------------------------------------------------------- */
+.game-body{
+    background-color:#313131;
+    color:#fff;
+    font-family: 'Roboto', sans-serif;
+    margin:0;
+    padding:0;
+}
+.main{
+    display:flex;
+    justify-content: space-between;
+}
+.result,.modal{
+    display:none;
+}
+
+/* Player team
+------------------------------------------------------------- */
+.team{
+    align-self: center;
+    background-color:#803714;
+    border:8px solid #F8DA94;
+    border-radius:25px;
+    margin:20px;
+    max-height: 520px;
+    padding:20px; 
+}
+.team-image{
+    background-color:#BA5F33;
+    background: radial-gradient(ellipse at top, #BA5F33, transparent),
+                radial-gradient(ellipse at bottom, #B47545, transparent);
+    border:5px solid #E5992F; 
+    border-bottom:0;    
+    display:block;
+    margin:0;
+    max-width:250px;
+    padding: 12px 8px; 
+}
+.team-title{
+    background-color:#7F3613;
+    border:5px solid #E5992F;  
+    color:#ECD3A4;  
+    font-family: 'Dancing Script', cursive;
+    font-size:26px;
+    font-weight:400;
+    letter-spacing: 1px;
+    margin:0;
+    padding:10px;    
+    text-align: center; 
+}
+/* Team details */
+.info{
+    background-color:#BC894D;
+    border:5px solid #E5992F;
+    border-top:0;
+    color:#262F3E;    
+    margin:0;
+}
+.info-title{
+    font-weight: 400;
+    margin:0;
+    padding:15px 20px;    
+}
+.info-detail{
+    color:#fff;
+    font-size:22px;
+    font-weight: 800;
+}
+.info-weapon{
+    text-transform: capitalize;
+}
+/* Team's turn */
+.team.turn{
+    background-color:#4F2C2B;
+    border:8px solid #E7BBA4;
+}
+.team.turn .team-image,.team.turn .team-title, .team.turn .info{
+    border-color: #A63B0F;
+}
+.team.turn .team-image{
+    background-color:#D8771E;
+}
+.team.turn .team-title{
+    background-color: #4B2828;
+    color:#FFD26F;
+}
+.team.turn .info{
+    background-color:#CF6535;
+}
+/* Button & Button group */
+.btn-group .team-title{
+    display:block;    
+    padding:10px 0px;
+    margin:0;
+}
+.btn-group{
+    display:flex;
+    justify-content: space-around;
+}
+.team.turn .btn-group, .team.turn .btn-group .team-title {
+    background-color:#A63B0F;
+}
+.team.turn .btn-group{    
+    border:5px solid #A63B0F;         
+    color:#ECD3A4;
+}
+.team.turn .btn-group .team-title{    
+    border:none;  
+}
+.btn {    
+    background-color:#803714;
+    border:none;
+    border-radius:8px;    
+    color:#ECD3A4; 
+    cursor: pointer;
+    display:block;
+    font-size:16px;    
+    letter-spacing: 1px;
+    outline: none;    
+    padding:10px;
+}
+.team.turn .btn{
+    background-color: #4B2828;
+    border-color: #A63B0F;
+    color:#FFD26F;
+}
+.btn-group{
+    display:none;
+}
+.show{
+    display:flex;
+}
+.hide{
+    display:none
+}
+
+/* Board
+------------------------------------------------------------- */
+.board{
+    background-color:#7793A1;
+    border-radius: 4px;
+    height: 622px;
+    margin:20px 0;    
+    width:600px;
+}
+.board img{
+    display:block;
+    height:58px;
+    margin:0;
+    margin:auto;
+    padding:0;  
+}
+table{
+    background-color:#7793A1;
+    border-radius:4px;
+	box-shadow: 1px 1px 3px #7793A1, -1px -1px 3px #7793A1;
+}
+.row{
+    height: 60px;
+}
+.box{
+    background-color: #2D3944;
+    height:60px;
+    margin:0;
+    max-width:60px;
+	min-width:58px;    
+    padding:0;    
+}
+.highlight{
+    background-color:#D8E0E3;
+    cursor: pointer;
+}
+.highlight:hover img{
+    display: none;
+}
+
+/* Battle
+------------------------------------------------------------- */
+@keyframes grow {
+    0%, 100% {transform: scale(1);}
+    30%, 70%{transform: scale(1.07);}
+    50%, 90%{transform: scale(1);}
+}
+.scale {
+    animation-name: grow;
+    animation-duration: 1s; 
+}
+
+/* Game result
+------------------------------------------------------------- */
+.result{
+    background-color: #2D3944;
+    padding:50px;
+    text-align:center;
+    width:100%;
+}
+.result-title{
+    font-size:28px;
+}
+.winner-image{
+    max-width: 350px;
+}
+.winner-name{
+    color: #D4F2FC;
+    font-family:'Dancing Script', cursive;    
+    font-size:30px;
+    font-weight: 500;
+}
+.result-text{
+    font-size:20px;
+}
+.btn-play{
+    background-color: #2B3641;
+    border: 2px solid #fff;
+    display:inline;
+}
+.blue-theme{
+    background-color: #2D3944;
+}
+
+/* Instructions
+------------------------------------------------------------- */
+.btn-help{
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+    outline: none;
+    position: fixed;
+    bottom:0;
+    right:5px;  
+}
+.btn-helpImg{
+    max-width: 47px;
+}
+.modal {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    overflow: auto;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;    
+    width: 100%; 
+}
+.modal-content {
+    background-color:#2D3944;
+    border-radius: 10px;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 
+    0 7px 20px 0 rgba(0,0,0,0.17);    
+    color:#fff;
+    font-weight: 300;
+    letter-spacing: 0.7px;
+    margin: 5% auto;
+    padding: 10px 30px;
+    width: 60%;    
+}
+.btn-closeModal{
+    cursor: pointer;
+    float: right;
+}
+.instructions-title{
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+    font-weight: 300;
+    text-align: center;
+}
+.instructions-item{
+    padding:5px;
+}
+
+/* Media queries
+------------------------------------------------------------- */
+@media only screen and (max-width:599px) {
+    .main{
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+}
+
+@media only screen  and (max-width:1340px){      
+    .main:nth-child(1){
+        order:1
+    }
+    .board{
+        order:3
+    }
+    .main:nth-child(3){
+        order:2
+    }
+}
+
+@media only screen and (min-width:600px) and (max-width:1340px){
+    .main{
+        flex-wrap: wrap;    
+        justify-content: space-around;   
+    }
+}
